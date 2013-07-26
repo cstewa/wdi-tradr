@@ -20,8 +20,9 @@ $(document).ready(function(){
   var create_graph = function(stock_data){
     stock_hash[stock_data['symbol']].push(stock_data);
     console.log(stock_hash)
+    $('#morris').append('<div id="chart_'+ stock_data['symbol'] + '"></div>')
     Morris.Line({
-      element: 'morris',
+      element: 'chart_' + stock_data['symbol'],
       data: stock_hash[stock_data['symbol']],
       xkey: 'time',
       ykeys: ['price'],
