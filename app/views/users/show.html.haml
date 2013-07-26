@@ -10,3 +10,13 @@
 
 %table#stocks
   = render :partial => "stocks_rows"
+
+%br
+
+#checkbox
+  - current_user.stocks.map{ |stock| stock.symbol }.uniq.each do |symbol|
+    %span.checkbox
+      = symbol
+      = check_box_tag symbol, true
+
+#morris
