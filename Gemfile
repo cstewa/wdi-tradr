@@ -5,12 +5,14 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-gem 'dotenv-rails'
-gem 'pry-rails'
-gem 'meta_request'
-gem 'better_errors'
-gem 'binding_of_caller'
+group :development do
+  gem 'pg'
+  gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'meta_request'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -46,6 +48,13 @@ gem 'unicorn'
 gem 'quiet_assets'
 
 gem 'sorcery'
+
+group :test, :development do
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+
 
 # gem 'stock_quote'
 
